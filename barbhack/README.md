@@ -525,6 +525,8 @@ static main() {
             auto size = 8;
             auto info_to_wr = x[i]; // block to decrypt
             patch_qword(placeholder, info_to_wr);
+	    // we can do a direct call to the function I renamed decrypt_info while debugging
+	    // thx to IDA's APPcall (see https://hex-rays.com/blog/practical-appcall-examples/)
             decrypt_info(placeholder, size, keyidx);
             if(is_ascii(placeholder, 8)){
                 print_little_endian_ascii(placeholder, 8);
