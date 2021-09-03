@@ -475,10 +475,12 @@ The following script will decrypt every block of data and print them if they are
 
 The script :
 
-- Hardcore right key values in memory for decryption (also hardcore `e`,`d`,`n`,`p`, and `q`, but they should not be required anyway)
+- Hard code right key values in memory for decryption (also hardcore `e`,`d`,`n`,`p`, and `q`, but they should not be required anyway)
 - Iterates over encrypted blocks
 - Calls decryption function of the server for each block, using all the keys
 - Prints decrypted block if the result of the decryption is a fully ASCII text
+
+Start a debug session, `file->script command` and paste the following :
 
 ```C
 
