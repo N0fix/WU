@@ -62,7 +62,7 @@ J'espère que tu es sur une VM au moins...
 
 With a quick look at the main function, we can see that it starts with 10 inlined printf & sleeps that prompt this warning.
 
-![image-20220403224606123](/home/nofix/.config/Typora/typora-user-images/image-20220403224606123.png)
+![image-20220403224606123](./img/image-20220403224606123.png)
 
 **After first execution, I did notice that not any encryption had been made on any files**. This is most likely due to a killswitch somewhere.
 
@@ -96,7 +96,7 @@ jnz     short loc_55555555DA93
 
 We can clearly see that a file is getting opened there. Whether this file gets successfully opened or not determines if files will be encrypted or not. 
 
-![image-20220403230140941](/home/nofix/.config/Typora/typora-user-images/image-20220403230140941.png)
+![image-20220403230140941](./img/image-20220403230140941.png)
 
 *On the above picture, light green represents the start of main function with sleeps & printf warnings, green path represent `~/.bash_history` file getting encrypted, the red one represents the second path with no encryption. Eventually both path join up at the yellow block, which is were directory iterator is getting initialized and used.*
 
