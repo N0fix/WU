@@ -37,7 +37,11 @@ We can clearly see that the crate used for encryption is [chacha20poly1305](http
 
 First thing that came in my mind : let's just put a breakpoint at `chacha20poly1305::new()` to retrieve the key, and one at `encrypt_in_place` to get the nonce.
 
-And that's what I tried. After noticing that this amazing binary got compiled by some of those archlinux people that just love to dynamically compile shits with latests GNUlibc available, so that no one else can run their binaries. *Just took me a while to boot up an up to date archlinux docker, GDB w PEDA or whatever to debug it.*  
+And that's what I tried. After noticing that this amazing binary got compiled by some of those archlinux people that just love to dynamically compile shits with latests GNUlibc available, so that no one else can run their binaries. *Just took me a while to boot up an up to date archlinux docker, GDB w PEDA or whatever to debug it.*
+
+```
+docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it -v /CTF/Breizh:/CTF/Breizh archlinux /bin/bash
+```  
 
 So, the challenge starts with a warning :
 
